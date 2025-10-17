@@ -1,4 +1,4 @@
- <%- include('../partials/header')%>
+        <%- include('../partials/header')%>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -12,7 +12,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Tables</h4>
+                        <h4 class="page-title">Form Basic</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -35,44 +35,52 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-6 mx-auto">
                         <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title m-b-0">Static Table</h5>
-                            </div>
-                            <table class="table">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Name</th>
-                                      <th scope="col">Price</th>
-                                      <th scope="col">Description</th>
-                                      <th scope="col">stock</th>
-                                      <th scope="col">Actions</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <% products.forEach((val,index)=>{  %>
-                                      <tr>
-                                        <td><%= index+1%></td>
-                                        <td><%= val.p_name%></td>
-                                        <td><%= val.price%></td>
-                                        <td><%= val.desc%></td>
-                                        <td><%= val.stock%></td>
-                                        <td>
-                                            <a href="/delete/<%= val._id%>" class="btn btn-danger">Delete</a>
-                                            <a href="/edit/<%= val._id%>" class="btn btn-warning">Edit</a>
-                                        </td>
-                                      </tr>
-                               <%   })%>
-                                  </tbody>
-                            </table>
+                            <form class="form-horizontal" action="/edit/<%= products._id%>" method="post">
+                                <div class="card-body">
+                                    <h4 class="card-title">Personal Info</h4>
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" value="<%= products.p_name%>" name="p_name" id="fname" placeholder="Product Name Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">price</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" value="<%= products.price%>" name="price" id="lname" placeholder="Price Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">description</label>
+                                        <div class="col-sm-9">
+                                            <textarea name="desc" id="desc"><%= products.desc%></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">stocks</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" value="<%= products.stock%>" name="stock" id="email1" placeholder="Company Name Here">
+                                        </div>
+                                    </div>
+                            
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                       
+                    
                         
-                        
+
                     </div>
+                    
                 </div>
+                <!-- editor -->
+               
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -88,6 +96,4 @@
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-           <%- include('../partials/footer')%>
+        <%- include('../partials/footer')%>

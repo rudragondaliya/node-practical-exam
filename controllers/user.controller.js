@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const User = require('../models/user')
 require('dotenv').config()
 const jwt = require('jsonwebtoken')
+const Product = require('../models/product')
 
 module.exports.loginPage=((req,res)=>{
     return res.render('index')
@@ -20,7 +21,12 @@ module.exports.formPage=((req,res)=>{
 })
 
 module.exports.tablePage=async(req,res)=>{
-    return res.render('./pages/tables')
+    try {
+        const products = await Product.find();
+        return res.render('./pages/tables',{products})
+    } catch (error) {
+        console.log(error.message);
+    }
 }
 
 module.exports.signup=async(req,res)=>{
