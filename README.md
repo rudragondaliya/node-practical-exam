@@ -1,6 +1,5 @@
 ---
 
-```markdown
 # 🧩 Node Practical Exam
 
 A complete **Node.js + Express + MongoDB** web application built using **EJS templating**, **JWT Authentication**, and **Multer for file uploads**.  
@@ -119,16 +118,6 @@ Then visit 👉 **[http://localhost:9001](http://localhost:9001)**
 
 ---
 
-## 📸 Screenshots
-
-| Login Page                                        | Dashboard                                                 |
-| ------------------------------------------------- | --------------------------------------------------------- |
-| ![Login Screenshot](public/screenshots/login.png) | ![Dashboard Screenshot](public/screenshots/dashboard.png) |
-
-*(Add your own screenshots inside `public/screenshots/` and update links accordingly.)*
-
----
-
 ## 📜 License
 
 This project is open-source under the **MIT License**.
@@ -143,12 +132,3 @@ This project is open-source under the **MIT License**.
 📍 India
 
 ---
-
-### ⭐ If you found this helpful, consider giving it a star on GitHub!
-
-```
-
----
-
-Would you like me to **generate this as a `README.md` file** and make it ready for upload to your repo (including replacing placeholders like your GitHub username automatically)?
-```
