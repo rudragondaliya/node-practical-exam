@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken')
 require('dotenv').config();
 
-const userAuth =(req,res,next)=>{
-    const {token} = req.cookie
+const userAuth = (req,res,next)=>{
+    const {token} = req.cookies;
 
-    const decode = jwt.verify('token',PRIVATE_KEY);
+    const decode = jwt.verify(token,process.env.PRIVATE_KEY);
     req.user = decode;
     next();
 }
